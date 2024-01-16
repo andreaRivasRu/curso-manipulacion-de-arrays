@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="task-planner"></div>
+
+    <script>
+        const tasks = [
+            {title: 'Call my mom', date: new Date(2024, 0, 16), priority: '🔥', completed: true}, 
+            {title: 'Do the dishes', date: new Date(2024, 0, 16), priority: '⚖️', completed: true},
+            {title: 'Workout', date: new Date(2024, 0, 17), priority: '🔥', completed: false},
+            {title: 'Go shopping', date: new Date(2024, 0, 18), priority: '❄️', completed: false}
+        ]
+
+        const taskPlanner = document.getElementById('task-planner');
+        tasks.forEach(task => {
+            taskPlanner.innerHTML += 
+            `<li>
+                <input type='checkbox' name='${task.title}' 
+                     ${task.completed && 'checked'} id=''>
+                <label for='${task.title}'>${task.title} - Priority: ${task.priority}</label>
+                <time datetime='${task.date}'>- Deadline: ${task.date.toLocaleDateString('en-US')}</time>
+            </li>`;
+        });
+    </script>
+</body>
+</html>
