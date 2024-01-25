@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const junkFood = [
+            {title: 'Hot dog', emoji: '🌭', price: 5}, 
+            {title: 'Pizza', emoji: '🍕', price: 15},
+            {title: 'Burger', emoji: '🍔', price: 10},
+            {title: 'Taco', emoji: '🌮', price: 2}
+        ]
+
+        const app = document.getElementById('app');
+        const list = junkFood.map(food => {
+            return `<li>${food.emoji} ${food.title} - Cuesta: $${food.price}</li>`;
+        })
+        console.log(list);
+        app.innerHTML = list.join('');
+    </script>
+</body>
+</html>
